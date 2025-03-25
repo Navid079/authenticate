@@ -27,6 +27,19 @@ function base32_encode(data) {
   return encoded_data;
 }
 
+function copyToClipboard(otpName) {
+  const otpCode = document.getElementById(`otp-${otpName}`).textContent;
+  navigator.clipboard
+    .writeText(otpCode)
+    .then(() => {
+      alert(`OTP code "${otpCode}" copied to clipboard!`);
+    })
+    .catch(err => {
+      alert("Failed to copy OTP code to clipboard.");
+      console.error(err);
+    });
+}
+
 function encryptAndSaveOTPs(otps) {
   const encryptedData = passwordSafe.encrypt(otps);
   localStorage.setItem("otps", encryptedData);
