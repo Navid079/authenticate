@@ -7,8 +7,8 @@ const ASSETS_TO_CACHE = [
   './uiManager.js',
   './main.js',
   './manifest.json',
-  './icons/icon-192x192.png',
-  './icons/icon-512x512.png'
+  './icons/web-app-manifest-192x192.png',
+  './icons/web-app-manifest-512x512.png'
 ];
 
 self.addEventListener('install', (event) => {
