@@ -117,7 +117,7 @@ async function importFromMigrationURI(uri) {
 
   const decodedData = Uint8Array.from(atob(dataParam), c => c.charCodeAt(0));
 
-  const root = await protobuf.load("/OtpMigration.proto");
+  const root = await protobuf.load("./OtpMigration.proto");
   const MigrationPayload = root.lookupType("MigrationPayload");
 
   const message = MigrationPayload.decode(new Uint8Array(decodedData));
